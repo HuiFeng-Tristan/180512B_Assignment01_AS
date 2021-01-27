@@ -119,7 +119,6 @@ namespace _180512B_Assignment01
                                 Session["Access_Token"] = myGUID;
 
                                 Response.Cookies.Add(new HttpCookie("Access_Token", myGUID));
-
                                 Response.Redirect("UserProfile.aspx", false);
                             }
                             else
@@ -241,7 +240,7 @@ namespace _180512B_Assignment01
             }
             else
             {
-                throw new InvalidOperationException("The checking of account logout have error");
+                throw new InvalidOperationException("The checking of account lockout have error");
             }
 
         }

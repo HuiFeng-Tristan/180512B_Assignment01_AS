@@ -122,11 +122,11 @@ namespace _180512B_Assignment01
                             Key = Convert.FromBase64String(reader["Key"].ToString());
 
                             
-                            tb_firstName.Text = reader["Last_Name"].ToString();
-                            tb_lastName.Text = reader["First_name"].ToString();
+                            tb_firstName.Text = HttpUtility.HtmlEncode(reader["Last_Name"].ToString());
+                            tb_lastName.Text = HttpUtility.HtmlEncode(reader["First_name"].ToString());
                             tb_dob.Text = Convert.ToDateTime(reader["DOB"]).ToString("dd/MM/yyyy");
-                            tb_email.Text = reader["Email"].ToString();
-                            tb_creditCard.Text = decryptData(Convert.FromBase64String(reader["Credit_Card"].ToString()));
+                            tb_email.Text = HttpUtility.HtmlEncode(reader["Email"].ToString());
+                            tb_creditCard.Text = HttpUtility.HtmlEncode(decryptData(Convert.FromBase64String(reader["Credit_Card"].ToString())));
 
 
                         }
